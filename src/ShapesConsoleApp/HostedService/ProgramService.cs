@@ -1,7 +1,7 @@
 ﻿namespace ShapesConsoleApp.HostedService;
 
 using BusinessLogic.Interfaces;
-using BusinessLogic.Sorting;
+using BusinessLogic.Flight;
 
 using Microsoft.Extensions.Hosting;
 
@@ -24,8 +24,8 @@ public class ProgramService : BackgroundService
         _shapeSorter.SortList(SortLogic.ByPerimeter, SortLogic.Descending);
         this._xmlExporter.ExportShapeCollection(this._shapeSorter.Shapes);
         Console.WriteLine("Exported file is in the application folder");
-        var counts = _shapeSorter.GetShapesCount();
-        Console.WriteLine($"The following were generated -> Circles: {counts.Circles}; Triangles: {counts.Triangles}; Quadrilaterals: {counts.Quadrilaterals} ");
+        var (circles, triangles, quadrilaterals) = _shapeSorter.GetShapesCount();
+        Console.WriteLine($"The following were generated -> Circles: {circles}; Triangles: {triangles}; Quadrilaterals: {quadrilaterals}");
         Console.WriteLine();
         Console.WriteLine();
         return Task.CompletedTask;

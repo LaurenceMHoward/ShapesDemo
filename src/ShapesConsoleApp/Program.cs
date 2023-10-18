@@ -4,7 +4,6 @@ using BusinessLogic.Flight;
 using BusinessLogic.Generating;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Output;
-using BusinessLogic.Sorting;
 using HostedService;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

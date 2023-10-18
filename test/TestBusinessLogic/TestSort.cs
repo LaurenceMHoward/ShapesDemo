@@ -4,7 +4,6 @@ namespace TestBusinessLogic;
 
 using BusinessLogic.Flight;
 using BusinessLogic.Generating;
-using BusinessLogic.Sorting;
 using FluentAssertions;
 
 public class TestSort

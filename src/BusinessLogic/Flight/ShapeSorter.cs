@@ -1,4 +1,4 @@
-﻿namespace BusinessLogic.Sorting;
+﻿namespace BusinessLogic.Flight;
 
 using Interfaces;
 using Shapes.Shapes;

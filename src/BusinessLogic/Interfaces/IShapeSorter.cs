@@ -1,7 +1,7 @@
 ﻿namespace BusinessLogic.Interfaces;
 
 using Shapes.Shapes;
-using Sorting;
+using Flight;
 
 public interface IShapeSorter
 {
