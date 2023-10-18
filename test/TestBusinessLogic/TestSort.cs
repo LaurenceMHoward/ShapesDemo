@@ -15,8 +15,10 @@ public class TestSort
     {
         ICounters counters = new Counters();
         ICollectionFactory collectionGenerator = new CollectionFactory(counters);
-        _sut = new ShapeSorter(counters);
-        _sut.Shapes = collectionGenerator.CreateShapeCollection(10);
+        _sut = new ShapeSorter(counters)
+        {
+            Shapes = collectionGenerator.CreateShapeCollection(10)
+        };
     }
 
     [Fact]
@@ -25,10 +27,10 @@ public class TestSort
         _sut.SortList(SortLogic.ByArea, SortLogic.Ascending);
         _sut.Shapes[0].Area.Should().BeLessThan(_sut.Shapes[9].Area);
         _sut.Shapes.Count.Should().Be(10);
-        var items = _sut.GetShapesCount();
-        items.Triangles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Triangle")));
-        items.Circles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Circle")));
-        items.Quadrilaterals.Should().Be(_sut.Shapes.Count(x => _rectNames.Contains(x.Name)));
+        var (circles, triangles, quadrilaterals) = _sut.GetShapesCount();
+        triangles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Triangle")));
+        circles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Circle")));
+        quadrilaterals.Should().Be(_sut.Shapes.Count(x => _rectNames.Contains(x.Name)));
     }
 
     [Fact]
