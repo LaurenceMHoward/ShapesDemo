@@ -5,9 +5,22 @@ using Shapes.Shapes;
 
 public class ShapeSorter : IShapeSorter
 {
+    private readonly ICounters _counters;
+
+    public ShapeSorter(ICounters counters)
+    {
+        this._counters = counters;
+    }
+
     public List<Shape> Shapes { get; set; } = new();
 
-    public void SortList(SortLogic sortParameter = SortLogic.ByPerimeter, SortLogic sortDirection = SortLogic.Descending)
+    public (int Circles, int Triangles, int Quadrilaterals) GetShapesCount()
+    {
+        return (_counters.Circles, _counters.Triangles, _counters.Quadrilaterals);
+    }
+
+    public void SortList(SortLogic sortParameter = SortLogic.ByPerimeter,
+        SortLogic sortDirection = SortLogic.Descending)
     {
         switch (sortParameter)
         {
