@@ -4,7 +4,7 @@ using Shapes.Helpers;
 namespace Shapes.Shapes;
 
 [XmlRoot("Triangle")]
-public class Triangle : Shape
+public sealed class Triangle : Shape
 {
     [XmlAttribute("b")] public double Base { get; set; }
 

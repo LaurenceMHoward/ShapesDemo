@@ -25,7 +25,7 @@ public class ProgramService : BackgroundService
         this._xmlExporter.ExportShapeCollection(this._shapeSorter.Shapes);
         Console.WriteLine("Exported file is in the application folder");
         var counts = _shapeSorter.GetShapesCount();
-        Console.WriteLine($"Circles: {counts.Circles}; Triangles: {counts.Triangles}; Quadrilaterals: {counts.Quadrilaterals} ");
+        Console.WriteLine($"The following were generated -> Circles: {counts.Circles}; Triangles: {counts.Triangles}; Quadrilaterals: {counts.Quadrilaterals} ");
         Console.WriteLine();
         Console.WriteLine();
         return Task.CompletedTask;

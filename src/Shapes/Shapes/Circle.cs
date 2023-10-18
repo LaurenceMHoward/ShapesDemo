@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using Helpers;
 
 [XmlRoot("Circle")]
-public class Circle : Shape
+public sealed class Circle : Shape
 {
     [XmlAttribute("Radius")] public double Radius { get; set; }
 }
