@@ -15,7 +15,7 @@ public class TestHelpers
     [Fact]
     public void TestHelper_SetPrecision_ToTwoDecimalPlace_AdjustDown_Success()
     {
-        double result = 9.484956545656345623.SetPrecision();
+        double result = 9.484956545656345623d.SetPrecision();
 
         result.Should().Be(9.48d);
     }
@@ -23,7 +23,7 @@ public class TestHelpers
     [Fact]
     public void TestHelper_SetPrecision_ToTwoDecimalPlace_AdjustUp_Success()
     {
-        double result = 9.988956545656345623.SetPrecision();
+        double result = 9.988956545656345623d.SetPrecision();
 
         result.Should().Be(9.99d);
     }
