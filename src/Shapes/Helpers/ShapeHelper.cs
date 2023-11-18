@@ -11,8 +11,8 @@ public static class ShapeHelper
     {
         circle.Name = "Circle";
         circle.Radius = radius;
-        circle.Area = (ShapeHelper.Pi * circle.Radius * circle.Radius).SetPrecision();
-        circle.Perimeter = (2 * ShapeHelper.Pi * circle.Radius).SetPrecision();
+        circle.Area = (Pi * circle.Radius * circle.Radius).SetPrecision();
+        circle.Perimeter = (2 * Pi * circle.Radius).SetPrecision();
     }
 
     public static void PopulateQuadrilateral(this Quadrilateral quad, double width, double length)
@@ -21,14 +21,7 @@ public static class ShapeHelper
         quad.Length = length;
         quad.Area = (width * length).SetPrecision();
         quad.Perimeter = ((width + length) * 2).SetPrecision();
-        if (Math.Abs(width - length) == 0)
-        {
-            quad.Name = "Square";
-        }
-        else
-        {
-            quad.Name = "Rectangle";
-        }
+        quad.Name = Math.Abs(width - length) == 0 ? "Square" : "Rectangle";
     }
 
     public static void PopulateTriangle(this Triangle triangle, double triangleBase, double sideOne, double sideTwo)

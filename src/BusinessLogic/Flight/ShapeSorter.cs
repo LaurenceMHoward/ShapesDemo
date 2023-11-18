@@ -3,20 +3,13 @@
 using Interfaces;
 using Shapes.Shapes;
 
-public class ShapeSorter : IShapeSorter
+public class ShapeSorter(ICounters counters) : IShapeSorter
 {
-    private readonly ICounters _counters;
-
-    public ShapeSorter(ICounters counters)
-    {
-        this._counters = counters;
-    }
-
-    public List<Shape> Shapes { get; set; } = new();
+    public List<Shape> Shapes { get; set; } = [];
 
     public (int Circles, int Triangles, int Quadrilaterals) GetShapesCount()
     {
-        return (_counters.Circles, _counters.Triangles, _counters.Quadrilaterals);
+        return (counters.Circles, counters.Triangles, counters.Quadrilaterals);
     }
 
     public void SortList(SortLogic sortParameter = SortLogic.ByPerimeter,

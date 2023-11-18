@@ -2,8 +2,6 @@
 
 using System.Xml.Serialization;
 
-using Helpers;
-
 [XmlRoot("Circle")]
 public sealed class Circle : Shape
 {
