@@ -16,7 +16,7 @@ public class CollectionFactory(ICounters counters) : ICollectionFactory
             collection.Add(GenerateSingleRandomShape());
         }
 
-        return [.. collection];
+        return collection;
     }
 
     private Shape GenerateSingleRandomShape()
@@ -43,7 +43,7 @@ public class CollectionFactory(ICounters counters) : ICollectionFactory
                     double c = _random.NextDouble() * 5;
                     triangle = new Triangle();
                     triangle.PopulateTriangle(b, a, c);
-                } while (triangle.Area <= 0 || double.IsNaN(triangle.Area));
+                } while (triangle.Area is <= 0 or Double.NaN);
 
                 s = triangle;
                 counters.Triangles++;
