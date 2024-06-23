@@ -14,7 +14,7 @@ internal class Program
     {
         // each process is run in the ProgramService class, with DI in accordance with SOLID principles.
         // the design pattern associated with dotnet is that of the IHost interface, which handles DI and processes in the HostedService.
-        var host = Host.CreateDefaultBuilder(args)
+        IHost host = Host.CreateDefaultBuilder(args)
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddSingleton<IShapeSorter, ShapeSorter>(); // sorting shapes collections by different parameters, and direction

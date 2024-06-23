@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61215DD6-4CAF-4A50-9656-688245FF5581}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		RuleSet2.ruleset = RuleSet2.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7E317CF5-9837-4950-A2D3-C1BDE796ED23}"
@@ -20,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FFD69515-F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestShapes", "test\TestShapes\TestShapes.csproj", "{4C4B08B4-EE55-4002-B8B2-5C0C81FC5F61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBusinessLogic", "test\TestBusinessLogic\TestBusinessLogic.csproj", "{19D40276-F62F-4B16-8C47-01FA2AA0AF89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBusinessLogic", "test\TestBusinessLogic\TestBusinessLogic.csproj", "{19D40276-F62F-4B16-8C47-01FA2AA0AF89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

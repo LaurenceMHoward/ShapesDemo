@@ -16,7 +16,7 @@ public class TestTriangles
     public void Triangle_generatesCorrectDimensions_AndName_WithCorrect_Precision_Success(double side0, double side1,
         double side2, string name, double perimeter, double area)
     {
-        var test = new Triangle();
+        Triangle test = new();
         test.PopulateTriangle(side0, side1, side2);
 
         test.Base.Should().Be(side0);

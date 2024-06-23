@@ -18,7 +18,7 @@ public class TestCircles
     public void Circle_generatesCorrectDimensions_AndName_WithExpectedPrecision_Success(double radius, double perimeter,
         double area)
     {
-        var test = new Circle();
+        Circle test = new();
         test.PopulateCircle(radius);
 
         test.Radius.Should().Be(radius);

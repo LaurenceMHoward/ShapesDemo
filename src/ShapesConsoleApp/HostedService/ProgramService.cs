@@ -13,7 +13,7 @@ public class ProgramService(IShapeSorter shapeSorter, ICollectionFactory collect
         shapeSorter.SortList(SortLogic.ByPerimeter, SortLogic.Descending);
         xmlExporter.ExportShapeCollection(shapeSorter.Shapes);
         Console.WriteLine("Exported file is in the application folder");
-        var (circles, triangles, quadrilaterals) = shapeSorter.GetShapesCount();
+        (int circles, int triangles, int quadrilaterals) = shapeSorter.GetShapesCount();
         Console.WriteLine(
             $"The following were generated -> Circles: {circles}; Triangles: {triangles}; Quadrilaterals: {quadrilaterals}");
         Console.WriteLine();

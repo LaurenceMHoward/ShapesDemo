@@ -8,13 +8,13 @@ using FluentAssertions;
 
 public class TestSort
 {
-    private readonly List<string> _rectNames = new() { "Square", "Rectangle" };
-    private readonly IShapeSorter _sut;
+    private readonly List<string> _rectNames = ["Square", "Rectangle"];
+    private readonly ShapeSorter _sut;
 
     public TestSort()
     {
         ICounters counters = new Counters();
-        ICollectionFactory collectionGenerator = new CollectionFactory(counters);
+        CollectionFactory collectionGenerator = new(counters);
         _sut = new ShapeSorter(counters)
         {
             Shapes = collectionGenerator.CreateShapeCollection(10)
@@ -27,7 +27,7 @@ public class TestSort
         _sut.SortList(SortLogic.ByArea, SortLogic.Ascending);
         _sut.Shapes[0].Area.Should().BeLessThan(_sut.Shapes[9].Area);
         _sut.Shapes.Count.Should().Be(10);
-        var (circles, triangles, quadrilaterals) = _sut.GetShapesCount();
+        (int circles, int triangles, int quadrilaterals) = _sut.GetShapesCount();
         triangles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Triangle")));
         circles.Should().Be(_sut.Shapes.Count(x => x.Name.Contains("Circle")));
         quadrilaterals.Should().Be(_sut.Shapes.Count(x => _rectNames.Contains(x.Name)));

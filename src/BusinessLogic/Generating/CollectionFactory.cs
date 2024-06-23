@@ -10,7 +10,7 @@ public class CollectionFactory(ICounters counters) : ICollectionFactory
 
     public List<Shape> CreateShapeCollection(int count)
     {
-        var collection = new List<Shape>();
+        List<Shape> collection = [];
         for (int i = 0; i < count; ++i)
         {
             collection.Add(GenerateSingleRandomShape());
@@ -27,7 +27,7 @@ public class CollectionFactory(ICounters counters) : ICollectionFactory
         {
             case 0:
                 double radius = _random.NextDouble() * (10 - 1) + 1;
-                var circle = new Circle();
+                Circle circle = new();
                 circle.PopulateCircle(radius);
                 s = circle;
                 counters.Circles++;
@@ -52,7 +52,7 @@ public class CollectionFactory(ICounters counters) : ICollectionFactory
             default:
                 double l = _random.NextDouble() * (10 - 1) + 1;
                 double w = _random.NextDouble() * (10 - 1) + 1;
-                var quad = new Quadrilateral();
+                Quadrilateral quad = new();
                 quad.PopulateQuadrilateral(w, l);
                 s = quad;
                 counters.Quadrilaterals++;

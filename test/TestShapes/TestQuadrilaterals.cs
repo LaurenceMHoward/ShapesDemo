@@ -19,7 +19,7 @@ public class TestQuadrilaterals
     public void Quadrilateral_generatesCorrectDimensions_AndName_WithCorrect_Precision_Success(double width,
         double length, string name, double perimeter, double area)
     {
-        var test = new Quadrilateral();
+        Quadrilateral test = new();
         test.PopulateQuadrilateral(width, length);
 
         test.Width.Should().Be(width);
