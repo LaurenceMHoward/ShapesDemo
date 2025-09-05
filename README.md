@@ -21,7 +21,7 @@ The shapes are arranged according to requirements.
     The application is designed with a 3-tier structure: data, process, and application
 
 
-This program was written in C#. version 7.
+This program was written in C#. version 9.
 
 # Unit Tests
     Unit Tests were tested for creating the defined requirements of circles, quadrilaterals and triangles.
